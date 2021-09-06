@@ -57,7 +57,7 @@ var time_of_section = '';
     {  
        if( $('div[class="card-body text-center"]')[i].innerText.split(' ')[0][0] == '0')
        {
-        date_of_section = $('div[class="card-body text-center"]')[0].innerText.split(' ')[0][1];
+        date_of_section = $('div[class="card-body text-center"]')[i].innerText.split(' ')[0][1];
        }
     else {
          date_of_section = $('div[class="card-body text-center"]')[i].innerText.split(' ')[0][0] + $('div[class="card-body text-center"]')[0].innerText.split(' ')[0][1];
@@ -65,15 +65,15 @@ var time_of_section = '';
        
 
         if($('div[class="card-body text-center"]')[i].innerText.split(' ')[3][0] == '0')
-         time_of_section = $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][1]+ $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][2]+ $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][3] +$('div[class="card-body text-center"]')[i].innerText.split(' ')[3][4];
+         time_of_section = $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][1]//+ $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][2]+ $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][3] +$('div[class="card-body text-center"]')[i].innerText.split(' ')[3][4];
        
         else
-        { time_of_section = $('div[class="card-body text-center"]')[i].innerText.split(' ')[3];}
+        { time_of_section = $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][0] + $('div[class="card-body text-center"]')[i].innerText.split(' ')[3][1];}
        
-        console.log(date_of_section);
+        //console.log(date_of_section);
         console.log(time_of_section);
       
-        if((g_today.getDate()+1).toString() == date_of_section && g_time == time_of_section)
+        if((g_today.getDate()+1).toString() == date_of_section && g_time.split(':')[0] == time_of_section)
        {  
            section_num = i;
            break;
