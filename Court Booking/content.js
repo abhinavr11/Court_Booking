@@ -73,7 +73,7 @@ var time_of_section = '';
         console.log(date_of_section);
         console.log(time_of_section);
       
-        if(g_today.getDate().toString() == date_of_section && g_time == time_of_section)
+        if((g_today.getDate()+1).toString() == date_of_section && g_time == time_of_section)
        {  
            section_num = i;
            break;
